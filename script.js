@@ -238,6 +238,8 @@ var btn_sort = document.querySelector(".button");
 btn_sort.addEventListener("click", () => {
     var take_array = [];
     var sc_array = [];
+    var p = document.querySelector("#search_akc");
+    p.style.visibility = "visible";
     var j = document.querySelector("#search_akc > tbody");
     j.innerHTML = '';
     //btn_sort.disabled = true;
@@ -288,10 +290,12 @@ var type_mode_array = [document.querySelector("#akc"), document.querySelector("#
 ];
 var select = document.querySelector("#mode");
 select.addEventListener("change", (event) => {
+    var p = document.querySelector("#search_akc");
+    p.style.visibility = "hidden";
     document.querySelector("#search_akc > tbody").innerHTML = ""
     type_mode_array.forEach((e, k) => {
         if (e.attributes.ctm.value == event.target.value) {
-            e.style.display = "table"
+            e.style.display = ""
         } else {
             e.style.display = "none"
 

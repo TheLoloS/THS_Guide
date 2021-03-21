@@ -21,6 +21,7 @@ body {
 #search_akc {
     animation: mymove_back 1.5s normal;
     animation-fill-mode: forwards;
+    visibility: hidden;
 }
 
 #mode {
