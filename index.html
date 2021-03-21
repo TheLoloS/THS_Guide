@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>THS_Guide</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="mc_font.css" />
+</head>
+
+<body>
+    <div class="animation" id="animation"></div>
+    <div class="menu" id="menu">
+        <div class="anim_l hvr" id="btn_1" name1="l">
+            <p class="white shadow">Akcesoria</p>
+        </div>
+        <div class="anim_p hvr" id="btn_2" name1="p">
+            <p class="white shadow">Lista kont i zastosowanie</p>
+        </div>
+        <div class="anim_l hvr" id="btn_3" name1="l">
+            <p class="white shadow">Statystyki ogólne</p>
+        </div>
+        <div class="anim_p hvr" id="btn_4" name1="p">
+            <p class="white shadow">BAO</p>
+        </div>
+        <div class="anim_l hvr" id="btn_5" name1="l">
+            <p class="white shadow">Rybki</p>
+        </div>
+        <div class="anim_p hvr" id="btn_6" name1="p">
+            <p class="white shadow">jak wpadne to dodam</p>
+        </div>
+    </div>
+
+    <!--tdis div will be changed by JS-->
+    <div class="content_hiden" id="content">
+        <div class="con_main" id="con_main">
+
+            <div class="search" style="text-align: end">
+
+                <form action="" style="display: inline-flex" name="search_form">
+                    <select id="mode">
+              <option value="list">Lista dostepnych akcesoriów</option>
+              <option value="have">Lista posiadanych akcesoriów z listy</option>
+              <option value="rings">Pierścienie</option>
+              <option value="bon">Bony</option>
+              <option value="energia">Energie</option>
+              <option value="amulet">Amulety</option>
+          </select>
+                    <input class="form_arial" type="text" placeholder="Podaj lvl" name="txt" />
+                    <input class="button" type="button" value="Dobierz" />
+                </form>
+            </div>
+            <div id="sub_akc">
+                <h1 class="white shadow">Akcesoria</h1>
+                <hr class="white shadow" />
+                <br />
+                <h2 class="white shadow">Przeczytaj:</h2>
+                <ol>
+                    <li class="white shadow">
+                        💎 - w chuj rzadki przedmiot, jest zapisany ale nie biore go pod uwage.
+                    </li>
+                    <li class="white shadow">
+                        🔙 - oznacza ze jest juz na liscie lepszy przedmiot ale rzadki.
+                    </li>
+                </ol>
+            </div>
+
+            <br />
+            <!-- Table with the all akcesories -->
+            <table id="search_akc" class="table white shadow">
+                <tbody></tbody>
+            </table>
+            <br><br>
+            <table ctm="list" id="akc" class="table white shadow">
+                <tr>
+                    <th class="green shadow">LVL</th>
+                    <th class="blue shadow">Nazwa</th>
+                    <th class="red shadow">Poziom</th>
+                    <th class="yellow shadow">Typ</th>
+                </tr>
+                <tr lvl="1">
+                    <td rowspan="4" class="green shadow">1</td>
+                    <td>Naszyjnik Gracza Premium</td>
+                    <td>5% / 4</td>
+                    <td>Naszyjnik</td>
+                </tr>
+                <tr lvl="1">
+                    <td>Tarcza Gracza Premium</td>
+                    <td>5 / 10% / 4</td>
+                    <td>Tarcza</td>
+                </tr>
+                <tr lvl="1">
+                    <td>Kolczyki Gracza Premium</td>
+                    <td>1 / 10% / 5</td>
+                    <td>Kolczyki</td>
+                </tr>
+                <tr lvl="1">
+                    <td>Bransoleta Gracza Premium</td>
+                    <td>5% / 4</td>
+                    <td>Bransoleta</td>
+                </tr>
+
+                <tr lvl="28">
+                    <td class="green shadow">28</td>
+                    <td>Bohaterka Bransoleta</td>
+                    <td>3% 15</td>
+                    <td>Bransoleta</td>
+                </tr>
+                <tr lvl="40">
+                    <td rowspan="3" class="green shadow">40</td>
+                    <td>Pajecza Tarcza</td>
+                    <td>10 / 8% / 11</td>
+                    <td>Tarcza</td>
+                </tr>
+                <tr lvl="40">
+                    <td>Pajęcze Kolczyki</td>
+                    <td>1 / 5% / 10</td>
+                    <td>Kolczyki</td>
+                </tr>
+                <tr lvl="40">
+                    <td>Pajęczy Naszyjnik</td>
+                    <td>5% / 10</td>
+                    <td>Naszyjnik</td>
+                </tr>
+                <tr lvl="50">
+                    <td rowspan="2" class="green shadow">50</td>
+                    <td>Ognisty Naszyjnik</td>
+                    <td>9% / 10</td>
+                    <td>Naszyjnik</td>
+                </tr>
+                <tr lvl="rare">
+                    <td>Szafirowy Naszyjnik 💎</td>
+                    <td>50% /75</td>
+                    <td>Naszyjnik</td>
+                </tr>
+                <tr lvl="52">
+                    <td class="green shadow">52</td>
+                    <td>Naszyjnik Gianta 🔙</td>
+                    <td>25% / 12</td>
+                    <td>Naszyjnik</td>
+                </tr>
+                <tr lvl="55">
+                    <td class="green shadow">55</td>
+                    <td>Ametystowe Kolczyki</td>
+                    <td>1 / 30% / 12</td>
+                    <td>Kolczyki</td>
+                </tr>
+                <tr lvl="57">
+                    <td class="green shadow">57</td>
+                    <td>Ogniste Kolczyki</td>
+                    <td>1 / 30% / 19</td>
+                    <td>Kolczyki</td>
+                </tr>
+                <tr lvl="59">
+                    <td class="green shadow">59</td>
+                    <td>Piekielna Tarcza</td>
+                    <td>1 / 40% / 50</td>
+                    <td>Tarcza</td>
+                </tr>
+                <tr lvl="64">
+                    <td class="green shadow">64</td>
+                    <td>Kolczyki Horusa</td>
+                    <td>1 / 40% / 20</td>
+                    <td>Kolczyki</td>
+                </tr>
+                <tr lvl="67">
+                    <td rowspan="2" class="green shadow">67</td>
+                    <td>Naszyjnik Atlantydy 🔙</td>
+                    <td>16% / 20</td>
+                    <td>Naszyjnik</td>
+                </tr>
+                <tr lvl="67">
+                    <td>Bransoleta Atlantydy</td>
+                    <td>16% / 15</td>
+                    <td>Bransoleta</td>
+                </tr>
+                <tr lvl="rare">
+                    <td class="green shadow">69</td>
+                    <td>Kolczyki z Hipopotama 💎</td>
+                    <td>1 / 15% / 75</td>
+                    <td>Kolczyki</td>
+                </tr>
+                <tr lvl="70">
+                    <td rowspan="4" class="green shadow">70</td>
+                    <td>Bransoleta Sif</td>
+                    <td>18% / 20</td>
+                    <td>Bransoleta</td>
+                </tr>
+                <tr lvl="70">
+                    <td>Naszyjnik Sif 🔙</td>
+                    <td>18% 25</td>
+                    <td>Naszyjnik</td>
+                </tr>
+                <tr lvl="70">
+                    <td>Kolczyki Sif 🔙</td>
+                    <td>2 / 32% / 35</td>
+                    <td>Kolczyki</td>
+                </tr>
+                <tr lvl="70">
+                    <td>Tarcza Leigong</td>
+                    <td>19 / 19% / 70</td>
+                    <td>Tarcza</td>
+                </tr>
+                <tr lvl="73">
+                    <td rowspan="2" class="green shadow">73</td>
+                    <td>Kolczyki Leigong</td>
+                    <td>2 / 8% / 120</td>
+                    <td>Kolczyki</td>
+                </tr>
+                <tr lvl="73">
+                    <td>Bransoleta Asow</td>
+                    <td>20% / 100</td>
+                    <td>Bransoleta</td>
+                </tr>
+                <tr lvl="74">
+                    <td class="green shadow">74</td>
+                    <td>Tarcza Krola Demonow</td>
+                    <td>19 / 50% / 70</td>
+                    <td>Tarcza</td>
+                </tr>
+                <tr lvl="76">
+                    <td class="green shadow">76</td>
+                    <td>Naszyjnik Leigong 🔙</td>
+                    <td>50% / 50</td>
+                    <td>Naszyjnik</td>
+                </tr>
+                <tr lvl="77">
+                    <td rowspan="2" class="green shadow">77</td>
+                    <td>Kolczyki Igwe</td>
+                    <td>1 / 10% / 125</td>
+                    <td>Kolczyki</td>
+                </tr>
+                <tr lvl="rare">
+                    <td>Tarcza Wirusowej Zarazy 💎</td>
+                    <td>22 35% 155</td>
+                    <td>Tarcza</td>
+                </tr>
+                <tr lvl="79">
+                    <td class="green shadow">79</td>
+                    <td>Tarcza Chang'e 🔙</td>
+                    <td>30 / 10% / 100</td>
+                    <td>Tarcza</td>
+                </tr>
+                <tr lvl="84">
+                    <td class="green shadow">84</td>
+                    <td>Starozytny Chinski Naszyjnik 🔙</td>
+                    <td>45% / 55</td>
+                    <td>Naszyjnik</td>
+                </tr>
+                <tr lvl="88">
+                    <td class="green shadow">88</td>
+                    <td>Demoniczny Naszyjnik Chaosu</td>
+                    <td>80% / 190</td>
+                    <td>Naszyjnik</td>
+                </tr>
+                <tr lvl="91">
+                    <td rowspan="2" class="green shadow">91</td>
+                    <td>Bransoleta Yuanshi Tiazun</td>
+                    <td>55% / 100</td>
+                    <td>Bransoleta</td>
+                </tr>
+                <tr lvl="91">
+                    <td>Tarcza Yuanshi Tiazun</td>
+                    <td>40 / 40% /100</td>
+                    <td>Tarcza</td>
+                </tr>
+                <tr lvl="92">
+                    <td class="green shadow">92</td>
+                    <td>Demoniczna Tarcza Chaosu</td>
+                    <td>30 / 50% / 290</td>
+                    <td>Tarcza</td>
+                </tr>
+                <tr lvl="93">
+                    <td class="green shadow">93</td>
+                    <td>Demoniczne Kolczyki Chaosu</td>
+                    <td>1 / 90% / 210</td>
+                    <td>Kolczyki</td>
+                </tr>
+                <tr lvl="94">
+                    <td rowspan="2" class="green shadow">94</td>
+                    <td>Tarcza Umarlego Rozpruwacza</td>
+                    <td>40 / 47% / 150</td>
+                    <td>Tarcza</td>
+                </tr>
+                <tr lvl="94">
+                    <td>Naszyjnik Angrbody</td>
+                    <td>21% / 605</td>
+                    <td>Naszyjnik</td>
+                </tr>
+                <tr lvl="99">
+                    <td class="green shadow">99</td>
+                    <td>Tarcza Angrbody</td>
+                    <td>51 / 50% / 203</td>
+                    <td>Tarcza</td>
+                </tr>
+            </table>
+            <div id="have" ctm="have" class="table white shadow" style="display: none;">
+                <table class="table white shadow">
+                    <tr>
+                        <th class="green shadow">LVL</th>
+                        <th class="blue shadow">Nazwa</th>
+                        <th class="yellow shadow">Typ</th>
+                        <th class="red shadow">Zdobyty?</th>
+                        <th class="aqua shadow">Konto</th>
+                    </tr>
+                    <tr lvl="1">
+                        <td rowspan="4" class="green shadow">1</td>
+                        <td>Naszyjnik Gracza Premium</td>
+                        <td>Naszyjnik</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr lvl="1">
+                        <td>Tarcza Gracza Premium</td>
+                        <td>Tarcza</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr lvl="1">
+                        <td>Kolczyki Gracza Premium</td>
+                        <td>Kolczyki</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr lvl="1">
+                        <td>Bransoleta Gracza Premium</td>
+                        <td>Bransoleta</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+
+                    <tr lvl="28">
+                        <td class="green shadow">28</td>
+                        <td>Bohaterka Bransoleta</td>
+                        <td>Bransoleta</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr lvl="40">
+                        <td rowspan="3" class="green shadow">40</td>
+                        <td>Pajecza Tarcza</td>
+                        <td>Tarcza</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr lvl="40">
+                        <td>Pajęcze Kolczyki</td>
+                        <td>Kolczyki</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr lvl="40">
+                        <td>Pajęczy Naszyjnik</td>
+                        <td>Naszyjnik</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr lvl="50">
+                        <td rowspan="2" class="green shadow">50</td>
+                        <td>Ognisty Naszyjnik</td>
+                        <td>Naszyjnik</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr lvl="rare">
+                        <td>Szafirowy Naszyjnik 💎</td>
+                        <td>Naszyjnik</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr lvl="52">
+                        <td class="green shadow">52</td>
+                        <td>Naszyjnik Gianta 🔙</td>
+                        <td>Naszyjnik</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr lvl="55">
+                        <td class="green shadow">55</td>
+                        <td>Ametystowe Kolczyki</td>
+                        <td>Kolczyki</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr lvl="57">
+                        <td class="green shadow">57</td>
+                        <td>Ogniste Kolczyki</td>
+                        <td>Kolczyki</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr lvl="59">
+                        <td class="green shadow">59</td>
+                        <td>Piekielna Tarcza</td>
+                        <td>Tarcza</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr lvl="64">
+                        <td class="green shadow">64</td>
+                        <td>Kolczyki Horusa</td>
+                        <td>Kolczyki</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr lvl="67">
+                        <td rowspan="2" class="green shadow">67</td>
+                        <td>Naszyjnik Atlantydy 🔙</td>
+                        <td>Naszyjnik</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr lvl="67">
+                        <td>Bransoleta Atlantydy</td>
+                        <td>Bransoleta</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr lvl="rare">
+                        <td class="green shadow">69</td>
+                        <td>Kolczyki z Hipopotama 💎</td>
+                        <td>Kolczyki</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr lvl="70">
+                        <td rowspan="4" class="green shadow">70</td>
+                        <td>Bransoleta Sif</td>
+                        <td>Bransoleta</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr lvl="70">
+                        <td>Naszyjnik Sif 🔙</td>
+                        <td>Naszyjnik</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr lvl="70">
+                        <td>Kolczyki Sif 🔙</td>
+                        <td>Kolczyki</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr lvl="70">
+                        <td>Tarcza Leigong</td>
+                        <td>Tarcza</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr lvl="73">
+                        <td rowspan="2" class="green shadow">73</td>
+                        <td>Kolczyki Leigong</td>
+                        <td>Kolczyki</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr lvl="73">
+                        <td>Bransoleta Asow</td>
+                        <td>Bransoleta</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr lvl="74">
+                        <td class="green shadow">74</td>
+                        <td>Tarcza Krola Demonow</td>
+                        <td>Tarcza</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr lvl="76">
+                        <td class="green shadow">76</td>
+                        <td>Naszyjnik Leigong 🔙</td>
+                        <td>Naszyjnik</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr lvl="77">
+                        <td rowspan="2" class="green shadow">77</td>
+                        <td>Kolczyki Igwe</td>
+                        <td>Kolczyki</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr lvl="rare">
+                        <td>Tarcza Wirusowej Zarazy 💎</td>
+                        <td>Tarcza</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr lvl="79">
+                        <td class="green shadow">79</td>
+                        <td>Tarcza Chang'e 🔙</td>
+                        <td>Tarcza</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr lvl="84">
+                        <td class="green shadow">84</td>
+                        <td>Starozytny Chinski Naszyjnik 🔙</td>
+                        <td>Naszyjnik</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr lvl="88">
+                        <td class="green shadow">88</td>
+                        <td>Demoniczny Naszyjnik Chaosu</td>
+                        <td>Naszyjnik</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr lvl="91">
+                        <td rowspan="2" class="green shadow">91</td>
+                        <td>Bransoleta Yuanshi Tiazun</td>
+                        <td>Bransoleta</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr lvl="91">
+                        <td>Tarcza Yuanshi Tiazun</td>
+                        <td>Tarcza</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr lvl="92">
+                        <td class="green shadow">92</td>
+                        <td>Demoniczna Tarcza Chaosu</td>
+                        <td>Tarcza</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr lvl="93">
+                        <td class="green shadow">93</td>
+                        <td>Demoniczne Kolczyki Chaosu</td>
+                        <td>Kolczyki</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr lvl="94">
+                        <td rowspan="2" class="green shadow">94</td>
+                        <td>Tarcza Umarlego Rozpruwacza</td>
+                        <td>Tarcza</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr lvl="94">
+                        <td>Naszyjnik Angrbody</td>
+                        <td>Naszyjnik</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr lvl="99">
+                        <td class="green shadow">99</td>
+                        <td>Tarcza Angrbody</td>
+                        <td>Tarcza</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </table>
+            </div>
+            <div id="rings" ctm="rings" class="white shadow" style="display: none;">
+                <table class="table white shadow">
+                    <tr>
+                        <th class="green shadow">LVL</th>
+                        <th class="blue shadow">Nazwa</th>
+                        <th class="yellow shadow">Max staty</th>
+                        <th class="red shadow">Zdobyty?</th>
+                        <th class="aqua shadow">Konto</th>
+                    </tr>
+                    <tr>
+                        <td class="red shadow">70</td>
+                        <td>Miedziany Pierścień</td>
+                        <td>Serce 5 / Blok 30%</td>
+                        <td>❌</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="red shadow">80</td>
+                        <td>Złoty Pierscien</td>
+                        <td>Serce 10 / Blok 30%</td>
+                        <td>❌</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="red shadow">85</td>
+                        <td>Szafirowy Pierscien</td>
+                        <td>Serce 5 / Blok 30%</td>
+                        <td>❌</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="red shadow">90</td>
+                        <td>Diamentowy Pierscien</td>
+                        <td>Serce 20 / Blok 30%</td>
+                        <td>❌</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="red shadow">90</td>
+                        <td>Pierscien Halloween</td>
+                        <td>Serce 18 / Blok 30%</td>
+                        <td>❌</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="red shadow">100</td>
+                        <td>Chinski Diamentowy Pierscien</td>
+                        <td>Serce 30 / Blok 40%</td>
+                        <td>❌</td>
+                        <td></td>
+                    </tr>
+                </table>
+            </div>
+            <div id="bon" ctm="bon" class="white shadow" style="display: none;">W trakcie Realizacji</div>
+            <div id="energia" ctm="energia" class="white shadow" style="display: none;">W trakcie Realizacji</div>
+            <div id="amulet" ctm="amulet" class="white shadow" style="display: none;">
+                <table class="table white shadow">
+                    <tr>
+                        <th class="green shadow">Numer</th>
+                        <th class="blue shadow">Nazwa</th>
+                        <th class="yellow shadow">Max staty</th>
+                    </tr>
+                    <tr>
+                        <th rowspan="5">1</th>
+                        <th rowspan="5">Amulet</th>
+                        <th>Szczęście (od 1% do 5%)</th>
+                    </tr>
+                    <tr>
+                        <th>Dodatkowe Ulepszenie (od 1% do 5%)</th>
+                    </tr>
+                    <tr>
+                        <th>Czas Biologa (od 0.1% do 1%)</th>
+                    </tr>
+                    <tr>
+                        <th>Czas Oczekiwania (od 1% do 25%)</th>
+                    </tr>
+                    <tr>
+                        <th>Penetracja Bloku (od 1% do 40%)</th>
+                    </tr>
+                </table>
+                <br>
+                <br>
+                <table class="table white shadow">
+                    <tr>
+                        <td colspan="5" class="aqua shadow">Zdobyte Amulety:</td>
+                    </tr>
+                    <tr>
+                        <th class="green shadow">Numer</th>
+                        <th class="blue shadow">Nazwa</th>
+                        <th class="yellow shadow">Max staty</th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="back_hiden" id="back"></div>
+    <script src="script.js"></script>
+</body>
+
+</html>
