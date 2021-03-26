@@ -141,7 +141,7 @@ back.addEventListener("click", () => {
 
 // Script from parciples
 var anima = document.querySelector("#animation");
-var rnd_parts = Math.floor((Math.random() + 0.4) * 25);
+var rnd_parts = Math.floor((Math.random() + 0.4) * 15);
 var tab_parts = [];
 var tab_parts_i_x = [];
 var tab_parts_i_y = [];
@@ -238,6 +238,7 @@ var btn_sort = document.querySelector(".button");
 btn_sort.addEventListener("click", () => {
     var take_array = [];
     var sc_array = [];
+    var str = "";
     var p = document.querySelector("#search_akc");
     p.style.visibility = "visible";
     var j = document.querySelector("#search_akc > tbody");
@@ -250,12 +251,12 @@ btn_sort.addEventListener("click", () => {
                 take_array.push(e);
             }
         });
+        // for for add elements to array to show search akces and sort them
         for (var i = take_array.length - 1; i >= 0; i--) {
-            if (sc_array.indexOf(take_array[i].lastElementChild.innerHTML) == -1) {
+            if (str.indexOf(take_array[i].lastElementChild.innerHTML) == -1) {
                 sc_array.push(take_array[i]);
-            } else if (
-                sc_array.indexOf(take_array[i].lastElementChild.innerHTML) != -1
-            ) {
+                str += take_array[i].lastElementChild.innerHTML;
+            } else {
                 continue;
             }
         }
