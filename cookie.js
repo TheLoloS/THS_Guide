@@ -17,7 +17,7 @@ checkbox.addEventListener('change', function() {
         cookies_anim(getCookie("a1"));
     } else {
         document.cookie = 'a1=false; expires=' + new Date(2147483647 * 1000).toUTCString();
-        console.log(getCookie("a1"))
+        cookies_anim(getCookie("a1"));
     }
 });
 //take value of cookies
