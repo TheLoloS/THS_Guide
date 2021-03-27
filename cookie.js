@@ -3,8 +3,6 @@
 
 var cookies = document.cookie;
 var checkbox = document.querySelector("input[name=checkbox_anim]");
-console.log(getCookie("a1"));
-console.log(getCookie("a1"));
 //check value of checkbox 
 if (getCookie("a1") == "true") {
     checkbox.checked = true;
@@ -17,11 +15,9 @@ checkbox.addEventListener('change', function() {
     if (this.checked) {
         document.cookie = 'a1=true; expires=' + new Date(2147483647 * 1000).toUTCString();
         cookies_anim(getCookie("a1"));
-        console.log(getCookie("a1"))
     } else {
         document.cookie = 'a1=false; expires=' + new Date(2147483647 * 1000).toUTCString();
         console.log(getCookie("a1"))
-        cookies_anim(getCookie("a1"));
     }
 });
 //take value of cookies

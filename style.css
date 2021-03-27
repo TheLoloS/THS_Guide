@@ -1,5 +1,5 @@
 body {
-    background-image: url(bg.jpg), url(bg2.png);
+    background-image: url(images/bg.jpg), url(images/bg2.png);
     background-size: 23vh;
     margin: 0;
     overflow: hidden;
@@ -148,7 +148,7 @@ body {
 }
 
 .btn {
-    background-image: url(btn.png);
+    background-image: url(images/btn.png);
     background-repeat: no-repeat;
     background-size: cover;
     justify-self: center;
@@ -184,7 +184,7 @@ div>p {
 }
 
 .visible {
-    background-image: url(btn.png);
+    background-image: url(images/btn.png);
     background-repeat: no-repeat;
     background-size: cover;
     justify-self: center;
@@ -206,7 +206,7 @@ div>p {
 
 #content {
     width: 60vw;
-    background-image: url(content_bg.png);
+    background-image: url(images/content_bg.png);
     height: auto;
     margin: 7vh 20vw 15vh 20vw;
     background-size: 23vh;
@@ -226,7 +226,7 @@ div>p {
     position: fixed;
     width: 12vh;
     height: 13vh;
-    background-image: url(btn2.gif);
+    background-image: url(images/btn2.gif);
     background-size: contain;
     background-repeat: no-repeat;
     bottom: 4vh;
@@ -236,7 +236,7 @@ div>p {
 }
 
 #back:hover {
-    background-image: url(btn.gif);
+    background-image: url(images/btn.gif);
     width: 13vh;
     height: 14vh;
     transition: 0.3s;

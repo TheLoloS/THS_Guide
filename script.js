@@ -143,7 +143,6 @@ function cookies_anim(a
     // getCookie("a1") == "true" && checkbox.checked == true
 ) {
     if (a == "false") {
-        c("hhhhhhhh")
         anima = document.querySelector("#animation");
         anima.innerHTML = ""
         rnd_parts = Math.floor((Math.random() + 0.4) * 15);
@@ -177,7 +176,7 @@ function cookies_anim(a
     tab_parts.forEach((e, k) => {
         var o_p = document.createElement("div"); // Create a <button> element
         o_p.className = "part";
-        o_p.style.backgroundImage = `url("${e + ".png"}")`;
+        o_p.style.backgroundImage = `url("images/${e + ".png"}")`;
         //o_p.innerHTML = `<img src="${e + '.png'}" alt=''>`; // Insert text
         anima.appendChild(o_p);
     });
@@ -326,13 +325,3 @@ select.addEventListener("change", (event) => {
     })
 
 })
-
-//animation on hover of back to menu button
-
-// var btn_back = document.querySelector("#back");
-// btn_back.addEventListener("onmouseover", () => {
-//     btn_back.style.backgroundImage = `url("btn.gif")`;
-// })
-// btn_back.addEventListener("onmouseout", () => {
-//     btn_back.style.backgroundImage = `url("btn2.gif")`
-// })
