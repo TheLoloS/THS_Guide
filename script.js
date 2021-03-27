@@ -139,94 +139,111 @@ back.addEventListener("click", () => {
     }, 1400);
 });
 
-// Script from parciples
-var anima = document.querySelector("#animation");
-var rnd_parts = Math.floor((Math.random() + 0.4) * 15);
-var tab_parts = [];
-var tab_parts_i_x = [];
-var tab_parts_i_y = [];
-
-//push to array elements to set array lenght
-for (i = 0; i < rnd_parts; i++) {
-    tab_parts.push("");
-    tab_parts_i_x.push();
-    tab_parts_i_y.push();
-}
-
-const parts = ["diax", "redstone", "iron", "emerald", "gold"]; // set parts names
-tab_parts.forEach((e, k) => {
-    tab_parts[k] = parts[Math.floor(Math.random() * 5)];
-    tab_parts_i_x[k] = Math.floor(Math.random() * 2); //set vector 1
-    tab_parts_i_y[k] = Math.floor(Math.random() * 2); //set vector 1
-});
-tab_parts.forEach((e, k) => {
-    var o_p = document.createElement("div"); // Create a <button> element
-    o_p.className = "part";
-    o_p.style.backgroundImage = `url("${e + ".png"}")`;
-    //o_p.innerHTML = `<img src="${e + '.png'}" alt=''>`; // Insert text
-    anima.appendChild(o_p);
-});
-var parts_a = document.querySelectorAll(".part");
-[...parts_a];
-
-parts_a.forEach((e, k) => {
-    //set rand position for elements {
-    var w = window.innerWidth;
-    var h = window.innerHeight;
-    var a = Math.floor(Math.random() * (h - vh(8))) + "px";
-    var b = Math.floor(Math.random() * (w - vw(8))) + "px";
-    e.style.position = "fixed";
-    e.style.top = a;
-    e.style.left = b;
-    // }
-
-    var vector_delay = Math.floor((Math.random() + 0.5) * 20); //set random delay from animation (tick in intewal)
-    setInterval(move_vector, 10); //set interval to function
-
-    function move_vector() {
-        //function to can add paramets to interval function
-        move_vector_x(e, tab_parts_i_x, tab_parts_i_y, k);
+function cookies_anim(a
+    // getCookie("a1") == "true" && checkbox.checked == true
+) {
+    if (a == "false") {
+        c("hhhhhhhh")
+        anima = document.querySelector("#animation");
+        anima.innerHTML = ""
+        rnd_parts = Math.floor((Math.random() + 0.4) * 15);
+        tab_parts = [];
+        tab_parts_i_x = [];
+        tab_parts_i_y = [];
+        parts_a = ""
+        return;
     }
-});
-// animation function and try to set kolisiob detection of it
-function move_vector_x(e, rnd_vector_a, rnd_vector_b, k) {
-    const r = function() {
-        if (window.innerWidth > window.innerHeight) {
-            return vw(4);
+
+    // Script from parciples declarate variables
+    var anima = document.querySelector("#animation");
+    var rnd_parts = Math.floor((Math.random() + 0.4) * 15);
+    var tab_parts = [];
+    var tab_parts_i_x = [];
+    var tab_parts_i_y = [];
+
+    //push to array elements to set array lenght
+    for (i = 0; i < rnd_parts; i++) {
+        tab_parts.push("");
+        tab_parts_i_x.push();
+        tab_parts_i_y.push();
+    }
+
+    const parts = ["diax", "redstone", "iron", "emerald", "gold"]; // set parts names
+    tab_parts.forEach((e, k) => {
+        tab_parts[k] = parts[Math.floor(Math.random() * 5)];
+        tab_parts_i_x[k] = Math.floor(Math.random() * 2); //set vector 1
+        tab_parts_i_y[k] = Math.floor(Math.random() * 2); //set vector 1
+    });
+    tab_parts.forEach((e, k) => {
+        var o_p = document.createElement("div"); // Create a <button> element
+        o_p.className = "part";
+        o_p.style.backgroundImage = `url("${e + ".png"}")`;
+        //o_p.innerHTML = `<img src="${e + '.png'}" alt=''>`; // Insert text
+        anima.appendChild(o_p);
+    });
+    var parts_a = document.querySelectorAll(".part");
+    [...parts_a];
+
+    parts_a.forEach((e, k) => {
+        //set rand position for elements {
+        var w = window.innerWidth;
+        var h = window.innerHeight;
+        var a = Math.floor(Math.random() * (h - vh(8))) + "px";
+        var b = Math.floor(Math.random() * (w - vw(8))) + "px";
+        e.style.position = "fixed";
+        e.style.top = a;
+        e.style.left = b;
+        // }
+
+        var vector_delay = Math.floor((Math.random() + 0.5) * 20); //set random delay from animation (tick in intewal)
+        setInterval(move_vector, 10); //set interval to function
+
+        function move_vector() {
+            //function to can add paramets to interval function
+
+            move_vector_x(e, tab_parts_i_x, tab_parts_i_y, k);
         }
-        if (window.innerWidth < window.innerHeight) {
-            return vw(11);
+    });
+    // animation function and try to set kolisiob detection of it
+    function move_vector_x(e, rnd_vector_a, rnd_vector_b, k) {
+
+        const r = function() {
+            if (window.innerWidth > window.innerHeight) {
+                return vw(4);
+            }
+            if (window.innerWidth < window.innerHeight) {
+                return vw(11);
+            }
+        };
+
+        var w = Math.floor(window.innerWidth - r());
+        var h = Math.floor(window.innerHeight - vh(8));
+
+        if (Number(e.style.top.slice(0, -2)) < 0) {
+            rnd_vector_a[k] = 1;
         }
-    };
+        if (Number(e.style.top.slice(0, -2)) >= h) {
+            rnd_vector_a[k] = 0;
+        }
+        if (Number(e.style.left.slice(0, -2)) < 0) {
+            rnd_vector_b[k] = 1;
+        }
+        if (Number(e.style.left.slice(0, -2)) > w) {
+            rnd_vector_b[k] = 0;
+        }
 
-    var w = Math.floor(window.innerWidth - r());
-    var h = Math.floor(window.innerHeight - vh(8));
-
-    if (Number(e.style.top.slice(0, -2)) < 0) {
-        rnd_vector_a[k] = 1;
-    }
-    if (Number(e.style.top.slice(0, -2)) >= h) {
-        rnd_vector_a[k] = 0;
-    }
-    if (Number(e.style.left.slice(0, -2)) < 0) {
-        rnd_vector_b[k] = 1;
-    }
-    if (Number(e.style.left.slice(0, -2)) > w) {
-        rnd_vector_b[k] = 0;
-    }
-
-    if (rnd_vector_a[k] == 1) {
-        e.style.top = Number(e.style.top.slice(0, -2)) + 2 + "px";
-    } else if (rnd_vector_a[k] == 0) {
-        e.style.top = Number(e.style.top.slice(0, -2)) - 2 + "px";
-    }
-    if (rnd_vector_b[k] == 1) {
-        e.style.left = Number(e.style.left.slice(0, -2)) + 2 + "px";
-    } else if (rnd_vector_b[k] == 0) {
-        e.style.left = Number(e.style.left.slice(0, -2)) - 2 + "px";
+        if (rnd_vector_a[k] == 1) {
+            e.style.top = Number(e.style.top.slice(0, -2)) + 2 + "px";
+        } else if (rnd_vector_a[k] == 0) {
+            e.style.top = Number(e.style.top.slice(0, -2)) - 2 + "px";
+        }
+        if (rnd_vector_b[k] == 1) {
+            e.style.left = Number(e.style.left.slice(0, -2)) + 2 + "px";
+        } else if (rnd_vector_b[k] == 0) {
+            e.style.left = Number(e.style.left.slice(0, -2)) - 2 + "px";
+        }
     }
 }
-
 //search engine od accesories
 
 var table = document.querySelector("#akc");

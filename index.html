@@ -8,10 +8,24 @@
     <title>THS_Guide</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="mc_font.css" />
+    <link rel="stylesheet" href="toggle_switch.css">
 </head>
 
 <body>
-    <div class="animation" id="animation"></div>
+    <div style="position: fixed;top: 4vh;left: 4vh;display: inline-flex;text-align: center;justify-content: space-between;z-index: 100;width: 21vh;align-items: center;">
+        <label class="switch">
+        <input style="position: absolute;z-index: 100;" type="checkbox" id="checkbox_anim" name="checkbox_anim">
+        <span class="slider"></span>
+    </label>
+        <label for="checkbox_anim" class="white shadow">Animacja kryształów</label>
+    </div>
+
+    <!-- <input style="position: absolute;z-index: 100;" type="checkbox" id="checkbox_anim" name="checkbox_anim"> -->
+    <!-- <label style="position: absolute;" for="checkbox_anim">Animacja kryształów</label> -->
+
+    <div class="animation" id="animation">
+    </div>
+
     <div class="menu" id="menu">
         <div class="anim_l hvr" id="btn_1" name1="l">
             <p class="white shadow">Akcesoria</p>
@@ -685,8 +699,13 @@
             </div>
         </div>
     </div>
+
     <div class="back_hiden" id="back"></div>
+
     <script src="script.js"></script>
+    <script src="cookie.js"></script>
+
+
 </body>
 
 </html>
